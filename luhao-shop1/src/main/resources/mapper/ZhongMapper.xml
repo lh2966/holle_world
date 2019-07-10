@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luhao.Dao.ZhongDao">
+	<insert id="add" parameterType="Zhong">
+		insert into zhong (did,sid) values(#{did},#{sid}) 
+	</insert>
+	
+	<delete id="deletes">
+		delete from zhong where did in 
+		 <foreach collection="array" item="item" open="(" separator="," close=")">
+		 	#{item}
+		 </foreach>
+	</delete>
+</mapper>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
